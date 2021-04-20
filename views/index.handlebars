@@ -1,0 +1,29 @@
+<div class="jumbotron">
+  <h1 class="display-4">Bem-vindo,a Bioespacial</h1>
+  <p class="lead">O site de notícias que é conectado com o Mundo.</p>
+  <hr class="my-4">
+  <p>Seja de qualquer lugar  do mundo, sempre estaremos conectado com vocês...</p>
+  <a class="btn btn-primary btn-lg" href="/admin/categorias/add" role="button">Crie sua categoria e depois sua postagem</a><br>
+  <a class="btn btn-primary btn-lg mt-3" href="/admin/postagens" role="button">Crie uma  postagem!</a>
+</div>
+<hr>
+<h2> Últimas notícias:</h2>
+
+{{#each postagens}}
+<div class="card mt-3">
+  <div class="card-body">
+    
+   
+   
+    <h3>Título:{{titulo}}</h3>
+    <p>Descrição:{{descricao}}</p>
+    <h2>{{conteudo}}</h2>
+    <a href="/postagem/{{tipos}}"><button class="btn btn-success">Leia mais</button></a>
+    <hr>
+     <small>Categoria:{{categoria.nome}}</small><br>
+    <small>Data de publicação:{{data}}</small> 
+  </div>
+</div>
+{{else}}
+  <h5>Nenhuma postagem</h5>
+{{/each}}
